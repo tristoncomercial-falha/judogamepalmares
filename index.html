@@ -339,6 +339,32 @@ footer a{color:var(--ink)}
   .cbtn small{font-size:.58rem}
   .chead{font-size:.66rem}
 }
+
+/* ---------- Telas baixas (Chromebook, notebook): o tatame cabe na altura da tela ---------- */
+.fitstage{width:min(100%,calc((100vh - var(--res)) * 2.1333));width:min(100%,calc((100svh - var(--res)) * 2.1333));margin-inline:auto}
+#arena .stagewrap{--res:290px}
+#learn .comicpanel{--res:250px}
+#golpes .stagewrap{--res:260px}
+.intro .comicpanel{--res:330px}
+@media (max-width:600px){.fitstage{width:100%}}
+@media (min-width:601px) and (max-height:820px){
+  body{padding-block:10px 32px}
+  .wrap{gap:12px}
+  header h1{font-size:2.2rem}
+  header .lede{display:none}
+  header .kanji{font-size:2rem}
+  nav button{padding:5px 12px;font-size:1.05rem}
+  .board{padding:6px;gap:5px}
+  .row{padding:3px 10px}
+  .row .name{font-size:1.15rem}
+  .cell b{font-size:1.55rem}
+  .clock b{font-size:1.6rem}
+  .steps li{padding:4px 10px}
+  .steps li span{display:none}
+  .intro h1{font-size:3rem}
+  .intro-card{gap:10px}
+  .pc{padding:4px 12px 4px 6px}.pc img{width:42px;height:42px}
+}
 /* ---------- Celular ---------- */
 button,select,label{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 @media (max-width:600px){
@@ -401,7 +427,7 @@ button,select,label{touch-action:manipulation;-webkit-tap-highlight-color:transp
       <p class="school">Escola Zumbi dos Palmares · <span class="nw">9<sup class="ord">o</sup> ano A</span></p>
       <h1 id="introTitle">Dojô do <span>Ippon</span></h1>
     </div>
-    <div class="comicpanel">
+    <div class="comicpanel fitstage">
       <div class="balloon" id="introBalloon"><small>Mestre</small><p id="introTxt"></p></div>
       <div class="stagewrap comicstage"><canvas id="cvIntro" width="640" height="300" aria-label="O Mestre e os judocas recebem a turma no dojô"></canvas></div>
     </div>
@@ -440,7 +466,7 @@ button,select,label{touch-action:manipulation;-webkit-tap-highlight-color:transp
   <section id="learn">
     <div class="comic">
       <div class="chapters" id="chapters" aria-label="Capítulos"></div>
-      <div class="comicpanel">
+      <div class="comicpanel fitstage">
         <div class="balloon" id="balloon" aria-live="polite"><small>Árbitro</small><p id="balloonTxt"></p></div>
         <div class="stagewrap comicstage">
           <canvas id="cvRules" width="640" height="300" aria-label="O árbitro explica as regras no dojô"></canvas>
@@ -561,7 +587,7 @@ button,select,label{touch-action:manipulation;-webkit-tap-highlight-color:transp
     <div class="lib">
       <div class="liblist" id="liblist"></div>
       <div class="libinfo">
-        <div class="stagewrap"><canvas id="cvLib" width="640" height="300" aria-label="Animação do golpe"></canvas></div>
+        <div class="stagewrap fitstage"><canvas id="cvLib" width="640" height="300" aria-label="Animação do golpe"></canvas></div>
         <div class="libctl">
           <button class="cta" id="libPlay">▶ Ver golpe</button>
           <label><input type="checkbox" id="libSlow" checked> Câmera lenta</label>
@@ -624,7 +650,7 @@ button,select,label{touch-action:manipulation;-webkit-tap-highlight-color:transp
         <li><b>③ Ne-waza</b><span>Dominar no chão</span></li>
       </ol>
 
-      <div class="stagewrap">
+      <div class="stagewrap fitstage">
         <canvas id="cv" width="640" height="300" aria-label="Tatame com os dois lutadores"></canvas>
         <div class="posture" id="posture" hidden></div>
         <div class="cmd" id="cmd" hidden>
